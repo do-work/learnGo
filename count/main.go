@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/do-work/learnGo/datafile"
 	"log"
 )
@@ -16,5 +17,7 @@ func main() {
 		counts[line]++
 	}
 
-	log.Println(counts)
+	for name, count := range counts {
+		fmt.Printf("Votes for %s: %d\n", name, count)
+	}
 }
