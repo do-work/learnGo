@@ -1,8 +1,9 @@
+// readfile calculates the average of several numbers from a text file.
 package main
 
 import (
 	"fmt"
-	"learnGo/datafile"
+	"github.com/do-work/learnGo/datafile"
 	"log"
 )
 
