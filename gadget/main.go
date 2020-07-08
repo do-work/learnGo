@@ -1,6 +1,4 @@
-package main
-
-import "github.com/do-work/learnGo/gadget"
+package gadget
 
 type Player interface {
 	Play(string)
@@ -16,8 +14,8 @@ func playlist(device Player, songs []string) {
 
 func main() {
 	mixtape := []string{"song1", "song2"}
-	var player Player = gadget.TapePlayer{}
+	var player Player = TapePlayer{}
 	playlist(player, mixtape)
-	player = gadget.TapeRecorder{}
+	player = TapeRecorder{}
 	playlist(player, mixtape)
 }
