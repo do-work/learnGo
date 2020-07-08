@@ -21,3 +21,11 @@ type TapeRecorder struct {
 func (t TapeRecorder) Record() {
 	fmt.Println("Recording.")
 }
+
+func (t TapeRecorder) Play(song string) {
+	fmt.Println("laying ", song)
+}
+
+func (t TapeRecorder) Stop() {
+	fmt.Println("Stopped.")
+}
