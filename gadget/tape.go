@@ -23,7 +23,7 @@ func (t TapeRecorder) Record() {
 }
 
 func (t TapeRecorder) Play(song string) {
-	fmt.Println("laying ", song)
+	fmt.Println("Playing ", song)
 }
 
 func (t TapeRecorder) Stop() {
