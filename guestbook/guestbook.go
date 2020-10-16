@@ -2,12 +2,16 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 )
+
+type Guestbook struct {
+	SignatureCount int
+	Signatures     []string
+}
 
 func getStrings(filename string) []string {
 	var lines []string
@@ -33,10 +37,13 @@ func check(err error) {
 
 func viewHandler(writer http.ResponseWriter, request *http.Request) {
 	signatures := getStrings("signatures.txt")
-	fmt.Printf("%#v\n", signatures)
+	guestbook := Guestbook{
+		SignatureCount: len(signatures),
+		Signatures:     signatures,
+	}
 	html, err := template.ParseFiles("view.html")
 	check(err)
-	err = html.Execute(writer, signatures)
+	err = html.Execute(writer, guestbook)
 	check(err)
 }
 
